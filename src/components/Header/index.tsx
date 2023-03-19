@@ -1,27 +1,42 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import Image from 'next/image';
 import React from 'react';
 import logo from 'assets/images/logo.svg';
+import getEnvs from '@helpers/getEnvs';
+import Container from '../Container';
+import {
+  Head,
+  Logo,
+  Wrap,
+  Menu,
+  Navigation,
+  Register,
+} from './styled';
+
+const { URL_APP } = getEnvs();
 
 function Header() {
   return (
-    <header>
-      <div>
-        <Image src={logo} alt="robo" />
-      </div>
+    <Head>
+      <Container>
+        <Wrap>
+          <Logo>
+            <Image src={logo} alt="robo" />
+          </Logo>
 
-      <div>
-        <ul>
-          <li><a href="#">Benefits</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">FAQ</a></li>
-        </ul>
+          <Navigation>
+            <Menu>
+              <li><a href="#benefits">Benefits</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </Menu>
 
-        <a href="#">
-          Register for FREE
-        </a>
-      </div>
-    </header>
+            <Register href={`${URL_APP}/register`}>
+              Register for FREE
+            </Register>
+          </Navigation>
+        </Wrap>
+      </Container>
+    </Head>
   );
 }
 
