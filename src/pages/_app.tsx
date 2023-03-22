@@ -8,7 +8,7 @@ const YANDEX_ID = Number(process.env.NEXT_PUBLIC_YANDEX_ID);
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      {YANDEX_ID && (
+      {!!YANDEX_ID && (
         <YMInitializer
           accounts={[YANDEX_ID]}
           options={{
