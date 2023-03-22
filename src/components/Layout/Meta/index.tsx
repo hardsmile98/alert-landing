@@ -29,6 +29,7 @@ function Meta({ title, description }: IProps) {
       <meta property="og:image" content={`${URL_SITE}/preview.png`} />
       <meta property="og:image:width" content="1400" />
       <meta property="og:image:height" content="800" />
+      <link rel="canonical" href={URL_SITE} />
     </Head>
   );
 }
